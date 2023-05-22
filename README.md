@@ -13,6 +13,34 @@ console.log(false == '0');
 console.log(false === '0');
 console.log('2' - 2);
 
+Implicit type coercion in JavaScript refers to the automatic conversion of values from one data type to another when performing operations or comparisons. It occurs when JavaScript attempts to make sense of an expression involving different data types by converting one or both values to a common type.
+
+Here are some common examples of implicit type coercion in JavaScript:
+
+String concatenation:
+When using the + operator with a string and another data type (such as a number), JavaScript will convert the non-string value to a string and concatenate the values together. For example:
+
+javascript
+Copy code
+const num = 10;
+const str = 'The number is ' + num;  // Implicitly converts `num` to a string
+console.log(str);  // Output: "The number is 10"
+Numeric operations:
+JavaScript attempts to convert non-number values to numbers when performing arithmetic operations, such as addition, subtraction, multiplication, and division. For example:
+
+javascript
+Copy code
+const result = '10' - 5;  // Implicitly converts the string '10' to the number 10
+console.log(result);  // Output: 5
+Loose equality comparison (==):
+The loose equality operator == performs implicit type coercion when comparing values of different types. JavaScript tries to convert one value to match the other before the comparison. For example:
+
+javascript
+Copy code
+console.log(5 == '5');  // Output: true (converts the string '5' to the number 5)
+console.log(false == 0);  // Output: true (converts false to the number 0)
+Implicit type coercion can be convenient in certain cases, but it can also lead to unexpected behavior and bugs if not used carefully. It's important to understand how JavaScript handles type conversions and be aware of potential pitfalls. To ensure strict type checking, the strict equality operator === is often preferred as it does not perform implicit type coercion and checks for both value equality and type equality.
+
 Currying in JavaScript is a technique used to transform a function with multiple arguments into a sequence of functions, each taking a single argument. It allows you to partially apply a function by fixing some of its arguments, resulting in a new function that accepts the remaining arguments.
 
 function add(x) {

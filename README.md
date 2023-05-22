@@ -5,6 +5,35 @@ console.log(1 + +'2' + '2');
 console.log(1 + -'1' + '2');
 console.log(+'1' + '1' + '2');
 console.log('A' - 'B' + '2');
+console.log(typeof typeof 1);
+console.log(typeof null);
+console.log(typeof NaN);
+console.log(typeof undefined);
+console.log(false == '0');
+console.log(false === '0');
+console.log('2' - 2);
+
+1 < 2 < 3:
+The first expression appears to compare three numbers: 1, 2, and 3. However, JavaScript evaluates this expression from left to right.
+
+First, 1 < 2 is evaluated, which is true (true is equivalent to 1 in JavaScript). So far, the expression becomes true < 3.
+
+In the second comparison, true is coerced into the number 1, so the expression becomes 1 < 3, which is true.
+
+Therefore, the output of console.log(1 < 2 < 3) will be true.
+
+3 > 2 > 1:
+Similarly, the second expression is evaluated from left to right.
+
+First, 3 > 2 is evaluated, which is also true. So far, the expression becomes true > 1.
+
+However, here's where it gets tricky. Unlike the previous example, true is coerced into the number 1, but the comparison operator > does not perform a further comparison with 1. Instead, it compares 1 with 1.
+
+Comparing 1 > 1 results in false because 1 is not greater than 1.
+
+Therefore, the output of console.log(3 > 2 > 1) will be false.
+
+In both cases, the result may seem counterintuitive. It's important to note that the comparison operators in JavaScript (<, >, <=, >=) are left-associative and evaluate expressions from left to right. Additionally, JavaScript performs implicit type coercion when necessary, which can lead to unexpected results. To avoid confusion, it's recommended to use strict equality operators (=== and !==) when comparing values.
 
 console.log([] == []);
 console.log([] === []);
